@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 
+const port = process.env.PORT || 3000
 const getForecastByLocation = require('./utils/forecastByLocation');
 
 const publicPath = path.join(__dirname,'..','public');
@@ -63,6 +64,6 @@ app.get('*',(req,res)=>{
 
 
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('server started');
 });
