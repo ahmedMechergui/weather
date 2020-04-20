@@ -11,7 +11,7 @@ const forecast = function(latitude,longitude,callback) {
             const weatherNow = body.currently;
             const weatherToday = body.daily.data[0].summary;
             forecastString = weatherToday + ' It is currently ' + weatherNow.temperature + ' degrees out . There is ' +
-                weatherNow.precipProbability + ' chance of rain'
+                weatherNow.precipProbability*100 + '% chance of rain'
             callback(undefined,forecastString);
         }
     });
